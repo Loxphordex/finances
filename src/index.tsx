@@ -14,7 +14,13 @@ const CApp = connect(MapStateToProps, MapDispatchToProps)(App)
 ReactDOM.render(
     <Provider store={store}>
         <CApp />
-    </Provider>, document.getElementById('root'));
+    </Provider>, 
+    // getElementById has a default type of (HTMLElement | null)
+    // By asserting HTMLElement, we are removing the possibility
+    // of returning null. This can also be achieved by placing
+    // a bang (!) after the statement
+    document.getElementById('root') as HTMLElement
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

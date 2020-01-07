@@ -1,4 +1,5 @@
 import React from 'react';
+import Hello from './Example/Hello'
 import './App.css';
 
 export const MapStateToProps = (state: any) => ({
@@ -9,6 +10,7 @@ const App: React.FC = (props) => {
   console.log(props)
   return (
     <div className="App">
+      <Hello name="Silas" enthusiasmLevel={ 7 } />
     </div>
   );
 }
